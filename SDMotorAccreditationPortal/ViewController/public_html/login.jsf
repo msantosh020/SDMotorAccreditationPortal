@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <af:document title="login.jsf" id="d1">
+        <!--<af:pageTemplate viewId="/template/SDMotorAccreditationPageTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="content"/>
+            </af:pageTemplate>-->
+        <af:resource type="css" source="resources/css/loginstyle.css"/>
+        <af:panelGroupLayout id="pt_psl2" layout="vertical" halign="center">
+            <af:panelGroupLayout id="pt_pgl7" layout="vertical" inlineStyle="width:1100.0px;">
+                <af:panelGroupLayout id="pt_pgl1" layout="horizontal" halign="end">
+                    <af:form id="f1">
+                        <af:link text="#{GlobalInfo.selectedLocale} #{GlobalInfo.selectedLocale eq 'en' ? portal.FR : portal.ENG}" id="pt_l1" partialSubmit="false"
+                                 actionListener="#{SDMotorAccreditationPageTemplateBackingBean.onLocaleSelectionAction}"/>
+                    </af:form>  
+                </af:panelGroupLayout>
+                <af:outputText value="#{portal.LOGIN_FAILED}" rendered="#{not empty param.loginFailed}"  id="ot1"/>  
+                <af:panelBox text="Login Information #{param.loginFailed}" styleClass="AFStretchWidth" id="pb1" showDisclosure="false">  
+                    <f:facet name="toolbar"/>
+                    <form name="login-form" class="login-form" method="POST" action="j_security_check">
+                        <p>
+                            <af:outputText value="#{portal.USER_NAME}" id="ot2"/><input type="text" name="j_username" placeholder="Username"/>
+                        </p>
+                        <p>
+                            <af:outputText value="#{portal.PWD}" id="ot3"/><input type="password" name="j_password" placeholder="Password"/>
+                        </p>
+                        <p class="remember_me">
+                            <label>
+                                <input type="checkbox" name="remember_me" id="remember_me">Remember me on this computer</input>
+                            </label>
+                        </p>
+                        <p class="submit">
+                            <input type="submit" name="submit" value="Login"/>
+                        </p>
+                    </form>
+                </af:panelBox>
+            </af:panelGroupLayout>
+        </af:panelGroupLayout>
+    </af:document>
+</f:view>

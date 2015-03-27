@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <af:pageTemplateDef var="attrs" definition="private">
+        <af:xmlContent>
+            p
+            <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+                <description/>
+                <display-name>SDMotorAccreditationPageTemplate</display-name>
+                <facet>
+                    <description>Facet for Center content</description>
+                    <facet-name>content</facet-name>
+                </facet>
+            </component>
+        </af:xmlContent>
+        <af:panelGroupLayout id="pt_psl2" layout="vertical" halign="center">
+            <af:panelGroupLayout id="pt_pgl7" layout="vertical" inlineStyle="width:1100.0px;">
+                <af:panelGroupLayout id="pt_pgl1" layout="horizontal" halign="end">
+                    <f:facet name="separator">
+                        <af:group id="pt_g1">
+                            <af:spacer width="10" height="10" id="pt_s1"/>
+                            <af:outputFormatted value="|" id="pt_of2"/>
+                            <af:spacer width="10" height="10" id="pt_s5"/>
+                        </af:group>
+                    </f:facet>
+                    <af:link text="#{GlobalInfo.selectedLocale eq 'en' ? portal.FR : portal.ENG}" id="pt_l1" actionListener="#{SDMotorAccreditationPageTemplateBackingBean.onLocaleSelectionAction}"/>
+                    <af:link text="Logout" id="pt_l7" actionListener="#{SDMotorAccreditationPageTemplateBackingBean.onLogoutAction}"/>
+                </af:panelGroupLayout>
+                <af:facetRef facetName="content"/>
+            </af:panelGroupLayout>
+        </af:panelGroupLayout>
+    </af:pageTemplateDef>
+</jsp:root>

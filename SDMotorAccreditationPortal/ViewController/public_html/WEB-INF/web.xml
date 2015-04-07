@@ -27,6 +27,10 @@
         <servlet-class>oracle.adf.share.security.authentication.AuthenticationServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>adflibResources</servlet-name>
+        <servlet-class>oracle.adf.library.webapp.ResourceServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -59,6 +63,10 @@
         <servlet-name>adfAuthentication</servlet-name>
         <url-pattern>/adfAuthentication</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adflibResources</servlet-name>
+        <url-pattern>/adflib/*</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>JpsFilter</filter-name>
         <filter-class>oracle.security.jps.ee.http.JpsFilter</filter-class>
@@ -78,6 +86,10 @@
     <filter>
         <filter-name>adfBindings</filter-name>
         <filter-class>oracle.adf.model.servlet.ADFBindingFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>ADFLibraryFilter</filter-name>
+        <filter-class>oracle.adf.library.webapp.LibraryFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>JpsFilter</filter-name>
@@ -102,6 +114,12 @@
     <filter-mapping>
         <filter-name>adfBindings</filter-name>
         <servlet-name>adfAuthentication</servlet-name>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ADFLibraryFilter</filter-name>
+        <url-pattern>/*</url-pattern>
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
@@ -167,6 +185,9 @@
     <listener>
         <listener-class>oracle.adf.mbean.share.config.ADFConfigLifeCycleCallBack</listener-class>
     </listener>
+    <listener>
+        <listener-class>oracle.adf.mbean.share.connection.ADFConnectionLifeCycleCallBack</listener-class>
+    </listener>
     <login-config>
         <auth-method>FORM</auth-method>
         <!--realm-name>JDBCRealm</realm-name-->
@@ -192,47 +213,29 @@
     <security-role>
         <role-name>valid-users</role-name>
     </security-role>
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>clientProtected</web-resource-name>
-            <!--url-pattern>/faces/pages/secure/employee/*</url-pattern-->
-            <url-pattern>/faces/home.jsf</url-pattern>
+            <web-resource-name>protected</web-resource-name>
+            <url-pattern>/faces/index.jsf</url-pattern>
         </web-resource-collection>
         <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>employee</role-name>
+            <role-name>salesRep</role-name>
+            <role-name>supervisor</role-name>
             <role-name>client</role-name>
         </auth-constraint>
-    </security-constraint>
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>salesRepProtected</web-resource-name>
-            <!--url-pattern>/faces/pages/secure/employee/*</url-pattern-->
-            <url-pattern>/faces/home.jsf</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>salesRep</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>employeeProtected</web-resource-name>
-            <!--url-pattern>/faces/pages/secure/employee/*</url-pattern-->
-            <url-pattern>/faces/home.jsf</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>employee</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>supervisorProtected</web-resource-name>
-            <!--url-pattern>/faces/pages/secure/employee/*</url-pattern-->
-            <url-pattern>/faces/home.jsf</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>supervisor</role-name>
-        </auth-constraint>
-    </security-constraint>
+    </security-constraint>   
     <welcome-file-list>
-        <welcome-file>/faces/home.jsf</welcome-file>
+        <welcome-file>/faces/index.jsf</welcome-file>
     </welcome-file-list>
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsff</url-pattern>
+            <is-xml>true</is-xml>
+        </jsp-property-group>
+    </jsp-config>
 </web-app>

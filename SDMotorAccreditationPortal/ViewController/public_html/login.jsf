@@ -2,9 +2,6 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:fn="http://java.sun.com/jsp/jstl/functions">
     <af:document title="login.jsf" id="d1">
-        <!--<af:pageTemplate viewId="/template/SDMotorAccreditationPageTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
-                <f:facet name="content"/>
-            </af:pageTemplate>-->
         <af:resource type="css" source="resources/css/loginstyle.css"/>
         <af:panelGroupLayout id="pt_psl2" layout="vertical" halign="center">
             <af:panelGroupLayout id="pt_pgl7" layout="vertical" inlineStyle="width:1100.0px;">
@@ -15,7 +12,7 @@
                     </af:form>  
                 </af:panelGroupLayout>
                 <af:outputText value="#{portal.LOGIN_FAILED}" rendered="#{not empty param.loginFailed}"  id="ot1"/>  
-                <af:panelBox text="Login Information #{param.loginFailed}" styleClass="AFStretchWidth" id="pb1" showDisclosure="false">  
+                <af:panelBox text="Login Information" inlineStyle="width:300px" id="pb1" showDisclosure="false" icon="/resources/images/logo.png">  
                     <f:facet name="toolbar"/>
                     <form name="login-form" class="login-form" method="POST" action="j_security_check">
                         <p>

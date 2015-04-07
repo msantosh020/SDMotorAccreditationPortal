@@ -4,10 +4,12 @@
     <page path="/template/SDMotorAccreditationPageTemplate.jspx" usageId="com_lockquell_motoraccreditation_view_SDMotorAccreditationPageTemplatePageDef"/>
     <page path="/home.jsf" usageId="com_lockquell_motoraccreditation_view_homePageDef"/>
     <page path="/login.jsf" usageId="com_lockquell_motoraccreditation_view_loginPageDef"/>
+    <page path="/index.jsf" usageId="com_lockquell_motoraccreditation_view_indexPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_lockquell_motoraccreditation_view_SDMotorAccreditationPageTemplatePageDef" path="template.SDMotorAccreditationPageTemplatePageDef"/>
     <page id="com_lockquell_motoraccreditation_view_homePageDef" path="com.lockquell.motoraccreditation.view.pageDefs.homePageDef"/>
     <page id="com_lockquell_motoraccreditation_view_loginPageDef" path="com.lockquell.motoraccreditation.view.pageDefs.loginPageDef"/>
+    <page id="com_lockquell_motoraccreditation_view_indexPageDef" path="com.lockquell.motoraccreditation.view.pageDefs.indexPageDef"/>
   </pageDefinitionUsages>
 </Application>

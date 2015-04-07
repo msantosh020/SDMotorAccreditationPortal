@@ -1,33 +1,55 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="1.2" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <af:pageTemplateDef var="attrs" definition="private">
+    <af:pageTemplateDef var="attrs">
         <af:xmlContent>
-            p
             <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
-                <description/>
-                <display-name>SDMotorAccreditationPageTemplate</display-name>
+                <description>This three column layout only template is ideal for both a tablet in the landscape orientation and the desktop. It contains a top area that works well for a logo, product
+                             name, and navigation components. The left area also works well for navigation controls. Target the center area for the main content of the page. The right area can contain
+                             ancillary content. The content shown merely suggests what to add and where. It is not included with the template.</description>
+                <display-name>Tablet First Template</display-name>
                 <facet>
-                    <description>Facet for Center content</description>
-                    <facet-name>content</facet-name>
+                    <facet-name>center</facet-name>
                 </facet>
+                <facet>
+                    <facet-name>start</facet-name>
+                </facet>
+                <facet>
+                    <facet-name>end</facet-name>
+                </facet>
+                <attribute>
+                    <attribute-name>minWidth</attribute-name>
+                    <attribute-class>java.lang.String</attribute-class>
+                </attribute>
+                <attribute>
+                    <attribute-name>startWidth</attribute-name>
+                    <attribute-class>java.lang.String</attribute-class>
+                    <default-value>170px</default-value>
+                </attribute>
+                <attribute>
+                    <attribute-name>endWidth</attribute-name>
+                    <attribute-class>java.lang.String</attribute-class>
+                    <default-value>170px</default-value>
+                </attribute>
             </component>
         </af:xmlContent>
-        <af:panelGroupLayout id="pt_psl2" layout="vertical" halign="center">
-            <af:panelGroupLayout id="pt_pgl7" layout="vertical" inlineStyle="width:1100.0px;">
-                <af:panelGroupLayout id="pt_pgl1" layout="horizontal" halign="end">
-                    <f:facet name="separator">
-                        <af:group id="pt_g1">
-                            <af:spacer width="10" height="10" id="pt_s1"/>
-                            <af:outputFormatted value="|" id="pt_of2"/>
-                            <af:spacer width="10" height="10" id="pt_s5"/>
-                        </af:group>
+        <af:group id="grp1">
+            <af:resource type="css" source="/styles/tabletFirstTemplate.css"/>
+            <div id="mainArea" class="MainArea">
+                <af:declarativeComponent viewId="header.jsff" id="bBarFDC"/>                 
+                <af:declarativeComponent viewId="/oracle/templates/contentBody.jsff" id="cBodFDC" startWidth="#{attrs.startWidth}" endWidth="#{attrs.endWidth}" minWidth="#{attrs.minWidth}"
+                                         brandingMaxWidth="1024px">
+                    <f:facet name="startFacet">
+                        <af:facetRef facetName="start"/>
                     </f:facet>
-                    <af:link text="#{GlobalInfo.selectedLocale eq 'en' ? portal.FR : portal.ENG}" id="pt_l1" actionListener="#{SDMotorAccreditationPageTemplateBackingBean.onLocaleSelectionAction}"/>
-                    <af:link text="Logout" id="pt_l7" actionListener="#{SDMotorAccreditationPageTemplateBackingBean.onLogoutAction}"/>
-                </af:panelGroupLayout>
-                <af:facetRef facetName="content"/>
-            </af:panelGroupLayout>
-        </af:panelGroupLayout>
+                    <f:facet name="endFacet">
+                        <af:facetRef facetName="end"/>
+                    </f:facet>
+                    <f:facet name="content">
+                        <af:facetRef facetName="center"/>
+                    </f:facet>
+                </af:declarativeComponent>
+            </div>
+        </af:group>
     </af:pageTemplateDef>
 </jsp:root>

@@ -1,12 +1,28 @@
 package com.lockquell.motoraccreditation.view.beans;
 
+import com.lockquell.motoraccreditation.view.util.MenuBuilderUtil;
+
+import java.util.List;
+
 
 public class GlobalInfo {
     public GlobalInfo() {
         super();
     }
 
-    private String selectedLocale;
+    private String selectedLocale = null;
+    private List<MenuItemBean> menuItems = null;
+
+    public void setMenuItems(List<MenuItemBean> menuItems) {
+        this.menuItems = menuItems;
+    }
+
+    public List<MenuItemBean> getMenuItems() {
+        if (menuItems == null) {
+            menuItems = MenuBuilderUtil.getUserMenuList();
+        }
+        return menuItems;
+    }
 
     public void setSelectedLocale(String selectedLocale) {
         this.selectedLocale = selectedLocale;

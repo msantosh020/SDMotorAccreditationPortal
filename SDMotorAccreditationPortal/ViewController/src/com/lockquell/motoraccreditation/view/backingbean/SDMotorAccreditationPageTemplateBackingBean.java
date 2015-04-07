@@ -33,7 +33,7 @@ public class SDMotorAccreditationPageTemplateBackingBean {
             session.invalidate();
             String contextPath = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
             System.out.println("contextPath=" + contextPath);
-            FacesContext.getCurrentInstance().getExternalContext().redirect(contextPath + "/faces/home.jsf");
+            FacesContext.getCurrentInstance().getExternalContext().redirect(contextPath + "/faces/index.jsf");
         } catch (IOException e) {
         }
     }

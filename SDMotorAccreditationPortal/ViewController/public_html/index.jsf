@@ -5,7 +5,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/template/SDMotorAccreditationPageTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="center">
-                    <af:panelGroupLayout id="pgl1" inlineStyle="width:600px;" styleClass="AFStretchWidth">
+                    <af:panelGroupLayout id="pgl1" styleClass="AFStretchWidth">
                         <af:outputText value="Home Page" id="ot1"/>
                     </af:panelGroupLayout>
                 </f:facet>

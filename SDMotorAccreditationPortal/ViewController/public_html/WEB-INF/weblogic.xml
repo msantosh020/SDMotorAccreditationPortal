@@ -22,4 +22,8 @@
         <role-name>employee</role-name>
         <principal-name>employee</principal-name>
     </security-role-assignment>
+    <security-role-assignment>
+        <role-name>admin</role-name>
+        <principal-name>admin</principal-name>
+    </security-role-assignment>
 </weblogic-web-app>

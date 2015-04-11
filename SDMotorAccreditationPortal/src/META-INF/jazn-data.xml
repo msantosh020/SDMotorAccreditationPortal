@@ -113,11 +113,6 @@
                             </permission>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>template.SDMotorAccreditationPageTemplatePageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>com.lockquell.motoraccreditation.view.pageDefs.indexPageDef</name>
                                 <actions>view</actions>
                             </permission>
@@ -136,11 +131,6 @@
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>com.lockquell.motoraccreditation.view.pageDefs.homePageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>template.SDMotorAccreditationPageTemplatePageDef</name>
                                 <actions>view</actions>
                             </permission>
                             <permission>
@@ -167,11 +157,6 @@
                             </permission>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>template.SDMotorAccreditationPageTemplatePageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>com.lockquell.motoraccreditation.view.pageDefs.indexPageDef</name>
                                 <actions>view</actions>
                             </permission>
@@ -190,11 +175,6 @@
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>com.lockquell.motoraccreditation.view.pageDefs.homePageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>template.SDMotorAccreditationPageTemplatePageDef</name>
                                 <actions>view</actions>
                             </permission>
                             <permission>
@@ -221,11 +201,6 @@
                             </permission>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>template.SDMotorAccreditationPageTemplatePageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>com.lockquell.motoraccreditation.view.pageDefs.indexPageDef</name>
                                 <actions>view</actions>
                             </permission>
@@ -244,6 +219,16 @@
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>com.lockquell.motoraccreditation.view.pageDefs.loginPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>template.SDMotorAccreditationPageTemplatePageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.lockquell.motoraccreditation.view.pageDefs.newClientUserFormPageDef</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>

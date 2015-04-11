@@ -132,9 +132,9 @@ public class ADFUtils {
      * Return the current page's binding container.
      * @return the current page's binding container
      */
-        public static BindingContainer getBindingContainer() {
-            return (BindingContainer) JSFUtils.resolveExpression("#{bindings}");
-        }
+    public static BindingContainer getBindingContainer() {
+        return (BindingContainer) JSFUtils.resolveExpression("#{bindings}");
+    }
 
     /**
      * Return the Binding Container as a DCBindingContainer.
@@ -401,22 +401,25 @@ public class ADFUtils {
     public static Object invokeOperationBinding(String pageDefName, String opName, Map<String, Object> paramMap) {
 
         OperationBinding ob = findOperationBinding(pageDefName, opName);
-
-        for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
-            ob.getParamsMap().put(entry.getKey(), entry.getValue());
+        if (paramMap != null) {
+            for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
+                ob.getParamsMap().put(entry.getKey(), entry.getValue());
+            }
         }
 
         Object result = ob.execute();
         if (!ob.getErrors().isEmpty()) {
-//            logger.error("Error Occured while executing the Method");
+            //            logger.error("Error Occured while executing the Method");
         }
         return result;
     }
 
     public static Object invokeOperationBinding(String opName, Map<String, Object> paramMap) {
         OperationBinding ob = findOperationBinding(opName);
-        for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
-            ob.getParamsMap().put(entry.getKey(), entry.getValue());
+        if (paramMap != null) {
+            for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
+                ob.getParamsMap().put(entry.getKey(), entry.getValue());
+            }
         }
         Object result = ob.execute();
         if (!ob.getErrors().isEmpty()) {

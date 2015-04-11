@@ -188,6 +188,9 @@
     <listener>
         <listener-class>oracle.adf.mbean.share.connection.ADFConnectionLifeCycleCallBack</listener-class>
     </listener>
+    <listener>
+        <listener-class>oracle.bc4j.mbean.BC4JConfigLifeCycleCallBack</listener-class>
+    </listener>
     <login-config>
         <auth-method>FORM</auth-method>
         <!--realm-name>JDBCRealm</realm-name-->

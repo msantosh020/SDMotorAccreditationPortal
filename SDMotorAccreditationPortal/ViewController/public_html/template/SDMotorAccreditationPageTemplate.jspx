@@ -36,11 +36,17 @@
         <af:group id="grp1">
             <af:resource type="css" source="/styles/tabletFirstTemplate.css"/>
             <div id="mainArea" class="MainArea">
-                <af:declarativeComponent viewId="header.jsff" id="bBarFDC"/>                 
+                <af:declarativeComponent viewId="header.jsff" id="bBarFDC"/>
+                 
                 <af:declarativeComponent viewId="/oracle/templates/contentBody.jsff" id="cBodFDC" startWidth="#{attrs.startWidth}" endWidth="#{attrs.endWidth}" minWidth="#{attrs.minWidth}"
                                          brandingMaxWidth="1024px">
                     <f:facet name="startFacet">
-                        <af:facetRef facetName="start"/>
+                        <!--<af:facetRef facetName="start"/>-->
+                        <af:panelGroupLayout id="pgl2" layout="vertical" styleClass="AFStretchWidth" rendered="#{securityContext.authenticated}">
+                            <af:iterator id="i1" value="#{GlobalInfo.menuItems}" var="menu" varStatus="vs" rows="0">
+                                <af:link text="#{menu.menuName}" id="l1"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                     </f:facet>
                     <f:facet name="endFacet">
                         <af:facetRef facetName="end"/>

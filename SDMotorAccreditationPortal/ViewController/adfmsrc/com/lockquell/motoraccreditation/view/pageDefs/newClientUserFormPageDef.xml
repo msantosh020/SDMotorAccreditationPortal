@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="newClientUserFormPageDef" Package="com.lockquell.motoraccreditation.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClientUserRequest" RangeSize="25" DataControl="SDMotorAccreditationAMDataControl" id="ClientUserRequestIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ClientUserRequestIterator" id="CompantId">
+      <AttrNames>
+        <Item Value="CompantId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientUserRequestIterator" id="ContractId">
+      <AttrNames>
+        <Item Value="ContractId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientUserRequestIterator" id="EmailId">
+      <AttrNames>
+        <Item Value="EmailId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientUserRequestIterator" id="InvoiceId">
+      <AttrNames>
+        <Item Value="InvoiceId"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="ClientUserRequestIterator" StaticList="false" Uses="LOV_ShowNewsletterFlag" id="ShowNewsletterFlag" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="ShowNewsletterFlag"/>
+      </AttrNames>
+    </button>
+    <button IterBinding="ClientUserRequestIterator" StaticList="false" Uses="LOV_UserAgreementFlag" id="UserAgreementFlag" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="UserAgreementFlag"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="ClientUserRequestIterator" id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientUserRequestIterator" id="UserRequestId">
+      <AttrNames>
+        <Item Value="UserRequestId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ClientUserRequestIterator" id="CreateInsert" InstanceName="SDMotorAccreditationAMDataControl.ClientUserRequest" DataControl="SDMotorAccreditationAMDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="SDMotorAccreditationAMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

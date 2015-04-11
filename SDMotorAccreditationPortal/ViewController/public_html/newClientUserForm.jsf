@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" beforePhase="#{viewScope.ClientUserRequestBackingBean.formNewCleintUserRequest}"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="newClientUserForm.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/template/SDMotorAccreditationPageTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="center">
+                    <af:panelGroupLayout id="pgl1" styleClass="AFStretchWidth" halign="left" layout="vertical">
+                        <af:outputLabel value="#{portal.ONLINE_CLIENT_USER}" id="ol1"/>
+                        <af:spacer width="10" height="10" id="s6"/>
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.EmailId.inputValue}" label="#{bindings.EmailId.hints.label}" required="#{bindings.EmailId.hints.mandatory}" columns="30"
+                                          maximumLength="#{bindings.EmailId.hints.precision}" shortDesc="#{bindings.EmailId.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.EmailId.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.UserName.inputValue}" label="#{bindings.UserName.hints.label}" required="#{bindings.UserName.hints.mandatory}" columns="30"
+                                          maximumLength="#{bindings.UserName.hints.precision}" shortDesc="#{bindings.UserName.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.UserName.validator}"/>
+                            </af:inputText>
+                            <af:spacer width="10" height="10" id="s1"/>
+                            <af:inputText value="#{bindings.CompantId.inputValue}" label="#{bindings.CompantId.hints.label}" required="#{bindings.CompantId.hints.mandatory}"
+                                          columns="#{bindings.CompantId.hints.displayWidth}" maximumLength="#{bindings.CompantId.hints.precision}" shortDesc="#{bindings.CompantId.hints.tooltip}"
+                                          id="it1">
+                                <f:validator binding="#{bindings.CompantId.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.InvoiceId.inputValue}" label="#{bindings.InvoiceId.hints.label}" required="#{bindings.InvoiceId.hints.mandatory}"
+                                          columns="#{bindings.InvoiceId.hints.displayWidth}" maximumLength="#{bindings.InvoiceId.hints.precision}" shortDesc="#{bindings.InvoiceId.hints.tooltip}"
+                                          id="it4">
+                                <f:validator binding="#{bindings.InvoiceId.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.ContractId.inputValue}" label="#{bindings.ContractId.hints.label}" required="#{bindings.ContractId.hints.mandatory}"
+                                          columns="#{bindings.ContractId.hints.displayWidth}" maximumLength="#{bindings.ContractId.hints.precision}" shortDesc="#{bindings.ContractId.hints.tooltip}"
+                                          id="it2">
+                                <f:validator binding="#{bindings.ContractId.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                        <af:spacer width="10" height="10" id="s7"/>
+                        <af:panelGroupLayout id="pgl6" layout="vertical">
+                            <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                <af:selectBooleanCheckbox value="#{bindings.ShowNewsletterFlag.inputValue}" simple="true" id="sbc1"/>
+                                <af:spacer width="10" height="10" id="s2"/>
+                                <af:outputText value="#{portal.AGREE_NEWSLETTER_TXT}" id="ot2"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl7" layout="horizontal">
+                                <af:selectBooleanCheckbox value="#{bindings.UserAgreementFlag.inputValue}" simple="true" id="sbc2"/>
+                                <af:spacer width="10" height="10" id="s4"/>
+                                <af:outputText value="#{portal.AGREE_USER_AGREEMENT}" id="ot3"/>
+                                <af:spacer width="5" height="10" id="s5"/>
+                                <af:link text="#{portal.USER_AGREEMENT}" immediate="true" id="l2">
+                                    <af:showPopupBehavior popupId=":::p2"/>
+                                </af:link>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:spacer width="10" height="10" id="s8"/>
+                        <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
+                            <af:button text="send request" id="b1" partialSubmit="false" actionListener="#{viewScope.ClientUserRequestBackingBean.sendRequestAction}"/>
+                            <af:spacer width="10" height="10" id="s3"/>
+                            <af:button text="cancel" id="b2" immediate="true" action="login"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:pageTemplate>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1" binding="#{viewScope.ClientUserRequestBackingBean.sendRequestSuccessPopup}">
+                <af:dialog id="d2" type="ok" inlineStyle="width:200px" title="Client User Request Success" dialogListener="#{viewScope.ClientUserRequestBackingBean.userRequestSuccessDialogListener}">
+                    <f:facet name="buttonBar">
+                        <af:panelGroupLayout id="pgl4" layout="vertical">
+                            <af:outputText value="#{portal.USER_REQUEST_SUCCESS_MSG}" id="ot1"/>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </af:dialog>
+            </af:popup>
+            <af:popup childCreation="immediate" contentDelivery="lazyUncached" autoCancel="disabled" id="p2">
+                <af:dialog id="d3" type="ok" inlineStyle="width:800px;height:550px;"  title="#{portal.USER_AGREEMENT}">
+                    <f:facet name="buttonBar">
+                        <af:panelGroupLayout id="pgl5" layout="vertical" halign="center">
+                            <!--<af:outputText value="#{portal.USER_AGREEMENT} details....." id="ot4"/>-->
+                            <af:inlineFrame inlineStyle="width:750px;height:450px;" source="http://www.showdistribution.com/wp-content/uploads/2015/03/Show-Distribution-training-courses-summary.pdf" id="if1"/>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </af:dialog>
+            </af:popup>
+        </af:form>
+    </af:document>
+</f:view>

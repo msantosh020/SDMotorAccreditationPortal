@@ -127,7 +127,7 @@ input[type=text], input[type=password] {
   }
 }
 
-input[type=submit] {
+input[type=submit], input[type=reset] {
   padding: 0 18px;
   height: 29px;
   font-size: 12px;

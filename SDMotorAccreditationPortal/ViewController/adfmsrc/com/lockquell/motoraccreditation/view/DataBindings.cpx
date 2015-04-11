@@ -5,11 +5,18 @@
     <page path="/home.jsf" usageId="com_lockquell_motoraccreditation_view_homePageDef"/>
     <page path="/login.jsf" usageId="com_lockquell_motoraccreditation_view_loginPageDef"/>
     <page path="/index.jsf" usageId="com_lockquell_motoraccreditation_view_indexPageDef"/>
+    <page path="/newClientUserForm.jsf" usageId="com_lockquell_motoraccreditation_view_newClientUserFormPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_lockquell_motoraccreditation_view_SDMotorAccreditationPageTemplatePageDef" path="template.SDMotorAccreditationPageTemplatePageDef"/>
     <page id="com_lockquell_motoraccreditation_view_homePageDef" path="com.lockquell.motoraccreditation.view.pageDefs.homePageDef"/>
     <page id="com_lockquell_motoraccreditation_view_loginPageDef" path="com.lockquell.motoraccreditation.view.pageDefs.loginPageDef"/>
     <page id="com_lockquell_motoraccreditation_view_indexPageDef" path="com.lockquell.motoraccreditation.view.pageDefs.indexPageDef"/>
+    <page id="com_lockquell_motoraccreditation_view_newClientUserFormPageDef" path="com.lockquell.motoraccreditation.view.pageDefs.newClientUserFormPageDef"/>
   </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="SDMotorAccreditationAMDataControl" Package="com.lockquell.motoraccreditation.model.appmodule" FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true" SupportsSortCollection="true" Configuration="SDMotorAccreditationAMLocal"
+                     syncMode="Immediate" xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
 </Application>

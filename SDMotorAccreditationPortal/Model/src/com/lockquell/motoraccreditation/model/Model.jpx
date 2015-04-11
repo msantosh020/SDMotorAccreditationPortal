@@ -1,56 +1,80 @@
-<?xml version="1.0" encoding="windows-1252" ?>
+<?xml version='1.0' encoding='windows-1252' ?>
 <!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
-<!---->
+
 <JboProject
-  xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Model"
-  Version="12.1.3.10.8"
-  SeparateXMLFiles="true"
-  PackageName="com.lockquell.motoraccreditation.model">
-  <DesignTime>
-    <Attr Name="_jprName" Value="../../../../../Model.jpr"/>
-    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
-    <Attr Name="_NamedConnection" Value="SDMotorAccreditation"/>
-    <Attr Name="_appModuleNames0" Value="com.lockquell.motoraccreditation.model.appmodule.SDMotorAccreditationAM"/>
-  </DesignTime>
-  <Containee
-    Name="assoc"
-    PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.entity.assoc"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_AS" Value="true"/>
-    </DesignTime>
-  </Containee>
-  <Containee
-    Name="entity"
-    PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.entity"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_EO" Value="true"/>
-    </DesignTime>
-  </Containee>
-  <Containee
-    Name="link"
-    PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.view.link"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_VL" Value="true"/>
-    </DesignTime>
-  </Containee>
-  <Containee
-    Name="view"
-    PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.view"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_VO" Value="true"/>
-    </DesignTime>
-  </Containee>
-  <Containee
-    Name="appmodule"
-    PackageName="com.lockquell.motoraccreditation.model.appmodule"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_AM" Value="true"/>
-    </DesignTime>
-  </Containee>
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="Model"
+   Version="12.1.3.10.8"
+   SeparateXMLFiles="true"
+   PackageName="com.lockquell.motoraccreditation.model" >
+   <DesignTime>
+      <Attr Name="_jprName" Value="../../../../../Model.jpr" />
+      <Attr Name="_appModuleNames0" Value="com.lockquell.motoraccreditation.model.appmodule.SDMotorAccreditationAM" />
+      <Attr Name="_jbo.TypeMapEntries" Value="OracleApps" />
+      <Attr Name="_NamedConnection" Value="SDMotorAccreditation" />
+   </DesignTime>
+   <Containee
+      Name="entity"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.admin.common.entity" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="view"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.admin.common.view" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="assoc"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.entity.assoc" >
+      <DesignTime>
+         <Attr Name="_AS" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="entity"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.entity" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="link"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.view.link" >
+      <DesignTime>
+         <Attr Name="_VL" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="view"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.admin.usermanagement.view" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="appmodule"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.appmodule" >
+      <DesignTime>
+         <Attr Name="_AM" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="view"
+      ObjectType="JboPackage"
+      PackageName="com.lockquell.motoraccreditation.model.common.view" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
 </JboProject>

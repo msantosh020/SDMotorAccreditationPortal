@@ -12,6 +12,18 @@ public class GlobalInfo {
 
     private String selectedLocale = null;
     private List<MenuItemBean> menuItems = null;
+    private MenuItemBean selectedMenuItem = null;
+
+    public void setSelectedMenuItem(MenuItemBean selectedMenuItem) {
+        this.selectedMenuItem = selectedMenuItem;
+    }
+
+    public MenuItemBean getSelectedMenuItem() {
+        if (selectedMenuItem == null) {
+            selectedMenuItem = getMenuItems().get(0);
+        }
+        return selectedMenuItem;
+    }
 
     public void setMenuItems(List<MenuItemBean> menuItems) {
         this.menuItems = menuItems;

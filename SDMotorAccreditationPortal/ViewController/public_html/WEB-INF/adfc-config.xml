@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="login">
+    <page>/login.jsf</page>
+  </view>
+  <view id="newClientUserForm">
+    <page>/newClientUserForm.jsf</page>
+  </view>
+  <control-flow-rule id="__4">
+    <from-activity-id>login</from-activity-id>
+    <control-flow-case id="__5">
+      <from-outcome>newClientUserForm</from-outcome>
+      <to-activity-id>newClientUserForm</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__7">
+      <from-outcome>login</from-outcome>
+      <to-activity-id>login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__1">
     <managed-bean-name>GlobalInfo</managed-bean-name>
     <managed-bean-class>com.lockquell.motoraccreditation.view.beans.GlobalInfo</managed-bean-class>
@@ -9,5 +29,15 @@
     <managed-bean-name>SDMotorAccreditationPageTemplateBackingBean</managed-bean-name>
     <managed-bean-class>com.lockquell.motoraccreditation.view.backingbean.SDMotorAccreditationPageTemplateBackingBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>IndexDynamicRegion</managed-bean-name>
+    <managed-bean-class>com.lockquell.motoraccreditation.view.beans.IndexDynamicRegion</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name>ClientUserRequestBackingBean</managed-bean-name>
+    <managed-bean-class>com.lockquell.motoraccreditation.view.backingbean.ClientUserRequestBackingBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
 </adfc-config>

@@ -6,8 +6,8 @@
             <af:pageTemplate viewId="/template/SDMotorAccreditationPageTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="center">
                     <af:panelGroupLayout id="pgl1" layout="vertical" inlineStyle="text-align: left;padding-left: 10px;" halign="left" styleClass="AFStretchWidth">
-                        <af:outputText value="outputText1" id="ot1"/>
-                        <!--<af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" styleClass="ContentContainerWorkaround"/>-->
+                        <!--<af:outputText value="outputText1" id="ot1"/>-->
+                        <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" styleClass="ContentContainerWorkaround"/>
                     </af:panelGroupLayout>
                 </f:facet>
                 <!--<f:facet name="start">

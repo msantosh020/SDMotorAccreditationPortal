@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM">
-      <AppModuleConfig name="SDMotorAccreditationAMLocal" jbo.project="com.sd.motoraccreditation.model.Model" ApplicationName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM" DeployPlatform="LOCAL">
+      <AppModuleConfig DeployPlatform="LOCAL" name="SDMotorAccreditationAMLocal" ApplicationName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM" jbo.project="com.sd.motoraccreditation.model.Model">
          <Database jbo.TypeMapEntries="OracleApps"/>
          <Security AppModuleJndiName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM"/>
-         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/SDMotorAccreditationDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+         <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="jdbc/SDMotorAccreditationDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
       </AppModuleConfig>
-      <AppModuleConfig name="SDMotorAccreditationAMShared" jbo.project="com.sd.motoraccreditation.model.Model" ApplicationName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM" DeployPlatform="LOCAL">
-         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <AppModuleConfig jbo.project="com.sd.motoraccreditation.model.Model" ApplicationName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM" DeployPlatform="LOCAL" name="SDMotorAccreditationAMShared">
+         <AM-Pooling jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.resetnontransactionalstate="false" jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
          <Database jbo.TypeMapEntries="OracleApps"/>
          <Security AppModuleJndiName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM"/>
-         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/SDMotorAccreditationDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+         <Custom ns0:JDBCDataSource="jdbc/SDMotorAccreditationDS" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
       </AppModuleConfig>
    </AppModuleConfigBag>
 </BC4JConfig>

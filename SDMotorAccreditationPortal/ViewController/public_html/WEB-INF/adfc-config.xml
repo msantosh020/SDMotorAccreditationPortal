@@ -29,7 +29,7 @@
     <managed-bean-name>SDMotorAccreditationPageTemplateBackingBean</managed-bean-name>
     <managed-bean-class>com.sd.motoraccreditation.view.backingbean.SDMotorAccreditationPageTemplateBackingBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
+  </managed-bean>  
   <managed-bean id="__3">
     <managed-bean-name>IndexDynamicRegion</managed-bean-name>
     <managed-bean-class>com.sd.motoraccreditation.view.beans.IndexDynamicRegion</managed-bean-class>

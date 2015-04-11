@@ -16,12 +16,14 @@
       window["_myBrandingBar"] = new MyBrandingBar("brandingContainer", "AFBrandingLogoTitleContainer");
     </af:resource>
     <div id="brandingContainer">
-        <af:panelGroupLayout layout="vertical" id="outerB" halign="center" styleClass="AFBrandingBar AFBrandingBarTall" inlineStyle="height:70px;">
+        <af:panelGroupLayout layout="vertical" id="outerB" halign="center" styleClass="AFBrandingBar AFBrandingBarTall" inlineStyle="height:100px;">
             <af:panelGridLayout id="branding" styleClass="BrandingMaxWidth-1024" dimensionsFrom="auto" clientComponent="true">
                 <af:gridRow marginTop="0px" height="35px" id="pt_gr2">
                     <af:gridCell marginStart="20px" marginEnd="0px" width="30%" id="pt_gc4" halign="start" styleClass="AFStretchWidth">
                         <af:panelGroupLayout id="logo" layout="horizontal">
-                            <af:link id="logoLink" icon="/resources/images/logo.png" action="index" styleClass="AFBrandingLogo"/>
+                            <af:link id="logoLink" inlineStyle="padding-top:15px;" icon="/resources/images/logo.png" styleClass="AFBrandingLogo" partialSubmit="false"
+                                     action="#{viewScope.IndexDynamicRegion.homePage}">
+                            </af:link>  
                         </af:panelGroupLayout>
                     </af:gridCell>
                     <af:gridCell marginStart="0px" width="40%" marginEnd="20px" id="pt_gc5" halign="start" styleClass="AFStretchWidth">
@@ -39,7 +41,7 @@
                                 </f:facet>
                                 <af:commandLink text="#{portal.WELCOME}, #{securityContext.userName}" id="cl3" disabled="true"/>
                                 <af:subform id="s6">
-                                    <af:link text="#{GlobalInfo.selectedLocale eq 'en' ? portal.FR : portal.ENG}" id="l1" partialSubmit="false"
+                                    <af:link text="#{GlobalInfo.selectedLocale eq 'en' ? portal.FR : portal.ENG}" id="l1" partialSubmit="true" 
                                              actionListener="#{SDMotorAccreditationPageTemplateBackingBean.onLocaleSelectionAction}"/>
                                 </af:subform>
                                 <af:link text="#{portal.LOGOUT}" id="l7" actionListener="#{SDMotorAccreditationPageTemplateBackingBean.onLogoutAction}"/>
@@ -49,7 +51,15 @@
                 </af:gridRow>
                 <af:gridRow marginTop="0px" height="10px" id="dc_gr2">
                     <af:gridCell marginStart="20px" marginEnd="0px" width="100%" id="dc_gc3" halign="center" columnSpan="3">
-                        <af:panelGroupLayout id="pt_pgl3" layout="horizontal" valign="middle" halign="center" styleClass="AFBrandingBarItem" rendered="#{securityContext.authenticated}" inlineStyle="">
+                        <af:panelGroupLayout id="pt_pgl3" layout="vertical" valign="middle" halign="center" styleClass="AFBrandingBarItem" rendered="#{securityContext.authenticated}" inlineStyle="">
+                            <af:switcher id="dc_s1" facetName="#{GlobalInfo.selectedMenuItem ne null ? 'otherPages' : 'home'}"  defaultFacet="home">
+                                <f:facet name="home">
+                                    <af:outputLabel value="#{portal.WELCOME} #{securityContext.userName}" id="dc_ol1"/>
+                                </f:facet>
+                                <f:facet name="otherPages">
+                                    <af:outputLabel value="#{GlobalInfo.selectedMenuItem.menuName}" id="dc_ol2"/> 
+                                </f:facet>
+                            </af:switcher>
                             <af:inputListOfValues placeholder="#{portal.SEARCH_STR}" columns="50" simple="true" popupTitle="Search" id="pt_ilov1"/>
                         </af:panelGroupLayout>
                     </af:gridCell>

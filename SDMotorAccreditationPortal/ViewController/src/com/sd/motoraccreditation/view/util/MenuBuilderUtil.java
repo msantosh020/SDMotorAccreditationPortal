@@ -1,5 +1,6 @@
 package com.sd.motoraccreditation.view.util;
 
+import com.sd.motoraccreditation.view.beans.IndexDynamicRegion;
 import com.sd.motoraccreditation.view.beans.MenuItemBean;
 
 import java.util.ArrayList;
@@ -10,15 +11,15 @@ public class MenuBuilderUtil {
         super();
     }
 
-    private static MenuItemBean userMgmtMenu = new MenuItemBean("Home", "/images/xxx.png", "/home.jspx");
-    private static MenuItemBean companiesListMenu = new MenuItemBean("Companies List", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
-    private static MenuItemBean companyMotorsListMenu = new MenuItemBean("Company’s motors list", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
-    private static MenuItemBean CompanyRequestListMenu = new MenuItemBean("Company‘s Request List", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
-    private static MenuItemBean MotorUserManualsMenu = new MenuItemBean("Motors’ user manuals", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
-    private static MenuItemBean requestsListMenu = new MenuItemBean("Requests lists", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
-    private static MenuItemBean ClientUserListMenu = new MenuItemBean("Client’s user list", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
-    private static MenuItemBean otherProductsMenu = new MenuItemBean("Other Products", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
-    private static MenuItemBean inspectionCheckingListMenu = new MenuItemBean("Inspection’s checking lists", "/images/xxx.png", "/pages/secure/employee/WeeklyTimeSheet.jspx");
+    private static MenuItemBean userMgmtMenu = new MenuItemBean("Home", "/images/xxx.png", IndexDynamicRegion.HOME_TASKFLOW);
+    private static MenuItemBean companiesListMenu = new MenuItemBean("Companies List", "/images/xxx.png", IndexDynamicRegion.COMPANIES_LIST_TASKFLOW);
+    private static MenuItemBean companyMotorsListMenu = new MenuItemBean("Company’s motors list", "/images/xxx.png", IndexDynamicRegion.COMPANY_MOTORS_LIST_TASKFLOW);
+    private static MenuItemBean CompanyRequestListMenu = new MenuItemBean("Company‘s Request List", "/images/xxx.png", IndexDynamicRegion.COMPANY_REQUEST_LIST_TASKFLOW);
+    private static MenuItemBean MotorUserManualsMenu = new MenuItemBean("Motors’ user manuals", "/images/xxx.png", IndexDynamicRegion.MOTOR_USER_MANUALS_TASKFLOW);
+    private static MenuItemBean requestsListMenu = new MenuItemBean("Requests lists", "/images/xxx.png", IndexDynamicRegion.REQUESTS_LIST_TASKFLOW);
+    private static MenuItemBean ClientUserListMenu = new MenuItemBean("Client’s user list", "/images/xxx.png", IndexDynamicRegion.CLIENT_USER_LIST_TASKFLOW);
+    private static MenuItemBean otherProductsMenu = new MenuItemBean("Other Products", "/images/xxx.png", IndexDynamicRegion.OTHER_PRODUCTS_TASKFLOW);
+    private static MenuItemBean inspectionCheckingListMenu = new MenuItemBean("Inspection’s checking lists", "/images/xxx.png", IndexDynamicRegion.INSPECTION_CHECKING_LIST_TASKFLOW);
 
     public static List<MenuItemBean> getUserMenuList() {
         //Array consist of admin, client, salesRep, supervisor, employee
@@ -53,5 +54,16 @@ public class MenuBuilderUtil {
         }
 
         return userMenuList;
+    }
+
+    public static MenuItemBean getMenuItemBean(String menuName) {
+        MenuItemBean menuItem = null;
+        for (MenuItemBean menu : getUserMenuList()) {
+            if (menuName.equals(menu.getMenuName())) {
+                menuItem = menu;
+                break;
+            }
+        }
+        return menuItem;
     }
 }

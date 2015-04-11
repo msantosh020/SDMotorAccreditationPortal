@@ -5,20 +5,20 @@
    <View
       id="View2">
       <property
-         name="activityId">home</property>
+         name="activityId">inspectionCheckingList</property>
       <property
-         name="page">/fragments/home.jsff</property>
+         name="page">/fragments/inspectionCheckingList.jsff</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>home&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>inspectionCheckingList&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">142.79883</property>
+         name="y">121.79883</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">292.5</property>
+         name="x">339.36816</property>
    </View>
 </SDM>

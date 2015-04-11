@@ -1,6 +1,9 @@
 package com.sd.motoraccreditation.view.backingbean;
 
 import com.sd.motoraccreditation.view.beans.GlobalInfo;
+import com.sd.motoraccreditation.view.beans.IndexDynamicRegion;
+import com.sd.motoraccreditation.view.beans.MenuItemBean;
+import com.sd.motoraccreditation.view.util.MenuBuilderUtil;
 import com.sd.motoraccreditation.view.util.SDMotorAccreditationUtil;
 
 import java.io.IOException;
@@ -37,4 +40,13 @@ public class SDMotorAccreditationPageTemplateBackingBean {
         } catch (IOException e) {
         }
     }
+
+    public void onMenuSelectionAction(ActionEvent actionEvent) {
+        String menuName = (String) actionEvent.getComponent().getAttributes().get("MenuName");
+        MenuItemBean selectedMenuItem = MenuBuilderUtil.getMenuItemBean(menuName);
+        GlobalInfo globalInfo = SDMotorAccreditationUtil.getGlobalInfo();
+        globalInfo.setSelectedMenuItem(selectedMenuItem);
+        IndexDynamicRegion indexDynamicRegion = SDMotorAccreditationUtil.getIndexDynamicRegion();
+        indexDynamicRegion.setDynamicTaskFlowId(selectedMenuItem.getPageUrl());
+    }    
 }

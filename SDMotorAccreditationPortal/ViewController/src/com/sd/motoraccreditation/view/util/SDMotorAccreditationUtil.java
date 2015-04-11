@@ -1,6 +1,7 @@
 package com.sd.motoraccreditation.view.util;
 
 import com.sd.motoraccreditation.view.beans.GlobalInfo;
+import com.sd.motoraccreditation.view.beans.IndexDynamicRegion;
 
 import java.util.Locale;
 
@@ -23,6 +24,11 @@ public class SDMotorAccreditationUtil {
     public static GlobalInfo getGlobalInfo() {
         GlobalInfo globalInfo = (GlobalInfo) JSFUtils.resolveExpression("#{GlobalInfo}");
         return globalInfo;
+    }
+
+    public static IndexDynamicRegion getIndexDynamicRegion() {
+        IndexDynamicRegion indexDynamicRegion = (IndexDynamicRegion) JSFUtils.resolveExpression("#{IndexDynamicRegion}");
+        return indexDynamicRegion;
     }
 
     public static boolean isAdminRoleUser() {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings" SeparateXMLFiles="false" Package="com.sd.motoraccreditation.view" ClientType="Generic">
+  <pageMap>
+    <page path="/template/SDMotorAccreditationPageTemplate.jspx" usageId="com_sd_motoraccreditation_view_SDMotorAccreditationPageTemplatePageDef"/>
+    <page path="/home.jsf" usageId="com_sd_motoraccreditation_view_homePageDef"/>
+    <page path="/login.jsf" usageId="com_sd_motoraccreditation_view_loginPageDef"/>
+    <page path="/index.jsf" usageId="com_sd_motoraccreditation_view_indexPageDef"/>
+    <page path="/newClientUserForm.jsf" usageId="com_sd_motoraccreditation_view_newClientUserFormPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_sd_motoraccreditation_view_SDMotorAccreditationPageTemplatePageDef" path="template.SDMotorAccreditationPageTemplatePageDef"/>
+    <page id="com_sd_motoraccreditation_view_homePageDef" path="com.sd.motoraccreditation.view.pageDefs.homePageDef"/>
+    <page id="com_sd_motoraccreditation_view_loginPageDef" path="com.sd.motoraccreditation.view.pageDefs.loginPageDef"/>
+    <page id="com_sd_motoraccreditation_view_indexPageDef" path="com.sd.motoraccreditation.view.pageDefs.indexPageDef"/>
+    <page id="com_sd_motoraccreditation_view_newClientUserFormPageDef" path="com.sd.motoraccreditation.view.pageDefs.newClientUserFormPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="SDMotorAccreditationAMDataControl" Package="com.sd.motoraccreditation.model.appmodule" FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true" SupportsSortCollection="true" Configuration="SDMotorAccreditationAMLocal"
+                     syncMode="Immediate" xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

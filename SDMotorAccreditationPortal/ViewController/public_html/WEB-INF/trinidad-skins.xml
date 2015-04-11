@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>SDMotorAccreditationStyle.desktop</id>
+    <family>SDMotorAccreditationStyle</family>
+    <extends>alta-v1.desktop</extends>   
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>resources/css/SDMotorAccreditationStyle/SDMotorAccreditationStyle.css</style-sheet-name>
+    <bundle-name>com.sd.motoraccreditation.view.bundle.skinBundle</bundle-name>
+  </skin>
+</skins>

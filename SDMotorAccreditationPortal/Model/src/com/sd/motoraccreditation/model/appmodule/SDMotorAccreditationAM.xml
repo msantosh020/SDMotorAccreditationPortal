@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="SDMotorAccreditationAM"
+   Version="12.1.3.10.8"
+   InheritPersonalization="merge" >
+   <ViewUsage
+      Name="Users"
+      ViewObjectName="com.sd.motoraccreditation.model.admin.usermanagement.view.UserVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="UserGroups"
+      ViewObjectName="com.sd.motoraccreditation.model.admin.usermanagement.view.UserGroupVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ClientUserRequest"
+      ViewObjectName="com.sd.motoraccreditation.model.admin.common.view.ClientUserRequestVO" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="UserVOToUserGroupVOLink1"
+      ViewLinkObjectName="com.sd.motoraccreditation.model.admin.usermanagement.view.link.UserVOToUserGroupVOLink"
+      SrcViewUsageName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM.Users"
+      DstViewUsageName="com.sd.motoraccreditation.model.appmodule.SDMotorAccreditationAM.UserGroups" >
+   </ViewLinkUsage>
+</AppModule>

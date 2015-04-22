@@ -52,7 +52,7 @@
                 <af:gridRow marginTop="0px" height="10px" id="dc_gr2">
                     <af:gridCell marginStart="20px" marginEnd="0px" width="100%" id="dc_gc3" halign="center" columnSpan="3">
                         <af:panelGroupLayout id="pt_pgl3" layout="vertical" valign="middle" halign="center" styleClass="AFBrandingBarItem" rendered="#{securityContext.authenticated}" inlineStyle="">
-                            <af:switcher id="dc_s1" facetName="#{GlobalInfo.selectedMenuItem ne null ? 'otherPages' : 'home'}"  defaultFacet="home">
+                            <af:switcher id="dc_s1" facetName="#{securityContext.authenticated and GlobalInfo ne null and GlobalInfo.selectedMenuItem ne null ? 'otherPages' : 'home'}"  defaultFacet="home">
                                 <f:facet name="home">
                                     <af:outputLabel value="#{portal.WELCOME} #{securityContext.userName}" id="dc_ol1"/>
                                 </f:facet>

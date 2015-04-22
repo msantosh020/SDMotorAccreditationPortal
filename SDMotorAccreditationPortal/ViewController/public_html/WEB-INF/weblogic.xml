@@ -26,4 +26,24 @@
         <role-name>admin</role-name>
         <principal-name>admin</principal-name>
     </security-role-assignment>
+    <security-role-assignment>
+        <role-name>client1</role-name>
+        <principal-name>client1</principal-name>
+    </security-role-assignment>
+    <security-role-assignment>
+        <role-name>salesRep1</role-name>
+        <principal-name>salesRep1</principal-name>
+    </security-role-assignment>
+    <security-role-assignment>
+        <role-name>supervisor1</role-name>
+        <principal-name>supervisor1</principal-name>
+    </security-role-assignment>
+    <security-role-assignment>
+        <role-name>employee1</role-name>
+        <principal-name>employee1</principal-name>
+    </security-role-assignment>
+    <security-role-assignment>
+        <role-name>admin1</role-name>
+        <principal-name>admin1</principal-name>
+    </security-role-assignment>
 </weblogic-web-app>

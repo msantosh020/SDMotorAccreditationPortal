@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Error503.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+                <af:activeOutputText value="admin : #{securityContext.userInAllRoles['admin1']} #{securityContext.userInRole['admin1']}" id="aot1"/>
+                <af:activeOutputText value="employee : #{securityContext.userInAllRoles['employee1']} #{securityContext.userInRole['employee1']}" id="aot3"/>
+                <af:activeOutputText value="salesRep : #{securityContext.userInAllRoles['salesRep1']} #{securityContext.userInRole['salesRep1']}" id="aot4"/>
+                <af:activeOutputText value="supervisor : #{securityContext.userInAllRoles['supervisor1']} #{securityContext.userInRole['supervisor1']}" id="aot5"/>
+                <af:activeOutputText value="admin : #{securityContext.userInAllRoles['admin1']}" id="aot6"/>
+                <af:activeOutputText value="#{securityContext.userRoles}" id="aot2"/>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

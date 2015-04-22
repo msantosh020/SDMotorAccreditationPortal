@@ -19,8 +19,8 @@ public class GlobalInfo {
     }
 
     public MenuItemBean getSelectedMenuItem() {
-        if (selectedMenuItem == null) {
-            selectedMenuItem = getMenuItems().get(0);
+        if (selectedMenuItem == null) { 
+            selectedMenuItem = getMenuItems() != null && getMenuItems().size() > 0 ? getMenuItems().get(0) : new MenuItemBean();
         }
         return selectedMenuItem;
     }

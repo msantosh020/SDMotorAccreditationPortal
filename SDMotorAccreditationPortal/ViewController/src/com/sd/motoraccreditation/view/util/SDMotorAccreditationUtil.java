@@ -79,19 +79,39 @@ public class SDMotorAccreditationUtil {
     public static boolean[] geUserRoles() {
         //Array consist of admin, client, salesRep, supervisor, employee
         boolean[] userRoles = { false, false, false, false, false };
+        /*
         for (String role : ADFContext.getCurrent().getSecurityContext().getUserRoles()) {
-            if ("admin".equals(role)) {
+            if ("admin".equals(role) || "admin1".equals(role)) {
                 userRoles[0] = true;
-            } else if ("client".equals(role)) {
+            } else if ("client".equals(role) || "client1".equals(role)) {
                 userRoles[1] = true;
-            } else if ("salesRep".equals(role)) {
+            } else if ("salesRep".equals(role) || "salesRep1".equals(role)) {
                 userRoles[2] = true;
-            } else if ("supervisor".equals(role)) {
+            } else if ("supervisor".equals(role) || "supervisor1".equals(role)) {
                 userRoles[3] = true;
-            } else if ("employee".equals(role)) {
+            } else if ("employee".equals(role) || "employee1".equals(role)) {
                 userRoles[4] = true;
             }
         }
+       */
+        Boolean adminRole = (Boolean) JSFUtils.resolveExpression("#{securityContext.userInRole['admin1'] or securityContext.userInRole['admin']}");
+        Boolean clientRole = (Boolean) JSFUtils.resolveExpression("#{securityContext.userInRole['client1'] or securityContext.userInRole['client']}");
+        Boolean salesRepRole = (Boolean) JSFUtils.resolveExpression("#{securityContext.userInRole['salesRep1'] or securityContext.userInRole['salesRep']}");
+        Boolean supervisorRole = (Boolean) JSFUtils.resolveExpression("#{securityContext.userInRole['supervisor1'] or securityContext.userInRole['supervisor']}");
+        Boolean employeeRole = (Boolean) JSFUtils.resolveExpression("#{securityContext.userInRole['employee1'] or securityContext.userInRole['employee']}");
+        
+        if (adminRole) {
+            userRoles[0] = true;
+        } else if (clientRole) {
+            userRoles[1] = true;
+        } else if (salesRepRole) {
+            userRoles[2] = true;
+        } else if (supervisorRole) {
+            userRoles[3] = true;
+        } else if (employeeRole) {
+            userRoles[4] = true;
+        }
+        
         return userRoles;
     }
 }

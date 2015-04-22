@@ -3,74 +3,21 @@
     <jazn-realm default="jazn.com">
         <realm>
             <name>jazn.com</name>
-            <users>
-                <user>
-                    <name>employee1</name>
-                    <credentials>{903}G2+FFlBCRB7uWNk0t6dsfXbX/8btdA1P</credentials>
-                </user>
-                <user>
-                    <name>salresrep1</name>
-                    <credentials>{903}OHR0DtxR6A7CwyiAJx/C3dWQry+6ne+V</credentials>
-                </user>
-                <user>
-                    <name>client1</name>
-                    <credentials>{903}4tfJ7KlERj1N8APLB4g1DnK+2EqsBrTN</credentials>
-                </user>
-                <user>
-                    <name>supervisor1</name>
-                    <credentials>{903}khx2kkgvOWnu8Bibv3AZVGL37JgYP/Io</credentials>
-                </user>
-                <user>
-                    <name>admin1</name>
-                    <credentials>{903}FhsagF8oUAVpQNTrk8tHPFg41x8ngNni</credentials>
-                    <display-name></display-name>
-                </user>
-            </users>
             <roles>
                 <role>
                     <name>employee</name>
-                    <members>
-                        <member>
-                            <type>user</type>
-                            <name>employee1</name>
-                        </member>
-                    </members>
                 </role>
                 <role>
                     <name>supervisor</name>
-                    <members>
-                        <member>
-                            <type>user</type>
-                            <name>supervisor1</name>
-                        </member>
-                    </members>
                 </role>
                 <role>
                     <name>client</name>
-                    <members>
-                        <member>
-                            <type>user</type>
-                            <name>client1</name>
-                        </member>
-                    </members>
                 </role>
                 <role>
                     <name>salesRep</name>
-                    <members>
-                        <member>
-                            <type>user</type>
-                            <name>salresrep1</name>
-                        </member>
-                    </members>
                 </role>
                 <role>
                     <name>admin</name>
-                    <members>
-                        <member>
-                            <type>user</type>
-                            <name>admin1</name>
-                        </member>
-                    </members>
                 </role>
             </roles>
         </realm>

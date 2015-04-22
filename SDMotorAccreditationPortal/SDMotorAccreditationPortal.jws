@@ -46,8 +46,8 @@
                   </hash>
                </list>
             </hash>
-            <url n="earURL" path="deploy/SDMotorAccreditationPortal_Project1_SDMotorAccreditationPortal.ear"/>
-            <value n="enterpriseAppName" v="SDMotorAccreditationPortal_Project1_SDMotorAccreditationPortal"/>
+            <url n="earURL" path="deploy/SDMotorAccreditationPortal.ear"/>
+            <value n="enterpriseAppName" v="SDMotorAccreditationPortal"/>
             <hash n="fileGroups">
                <list n="groups">
                   <hash>
@@ -84,6 +84,8 @@
                   </hash>
                </list>
             </hash>
+            <value n="platformType" v="GLASSFISH"/>
+            <value n="platformVersion" v="3.1.0.0"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.ear.EarProfile"/>
             <value n="profileName" v="SDMotorAccreditationPortal_Project1_SDMotorAccreditationPortal"/>
             <hash n="properties">

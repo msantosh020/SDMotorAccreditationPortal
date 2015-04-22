@@ -5,8 +5,7 @@
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="GroupVOToUserGroupVOLink"
   Version="12.1.3.10.8"
-  InheritPersonalization="merge"
-  EntityAssociation="com.sd.motoraccreditation.model.admin.usermanagement.entity.assoc.GroupEOToUserGroupEOAssoc">
+  InheritPersonalization="merge">
   <ViewLinkDefEnd
     Name="GroupVO"
     Cardinality="1"

@@ -6,6 +6,7 @@
     <page path="/login.jsf" usageId="com_sd_motoraccreditation_view_loginPageDef"/>
     <page path="/index.jsf" usageId="com_sd_motoraccreditation_view_indexPageDef"/>
     <page path="/newClientUserForm.jsf" usageId="com_sd_motoraccreditation_view_newClientUserFormPageDef"/>
+    <page path="/fragments/users/userManagement.jsff" usageId="com_sd_motoraccreditation_view_userManagementPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_sd_motoraccreditation_view_SDMotorAccreditationPageTemplatePageDef" path="template.SDMotorAccreditationPageTemplatePageDef"/>
@@ -13,6 +14,7 @@
     <page id="com_sd_motoraccreditation_view_loginPageDef" path="com.sd.motoraccreditation.view.pageDefs.loginPageDef"/>
     <page id="com_sd_motoraccreditation_view_indexPageDef" path="com.sd.motoraccreditation.view.pageDefs.indexPageDef"/>
     <page id="com_sd_motoraccreditation_view_newClientUserFormPageDef" path="com.sd.motoraccreditation.view.pageDefs.newClientUserFormPageDef"/>
+    <page id="com_sd_motoraccreditation_view_userManagementPageDef" path="fragments.users.userManagementPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SDMotorAccreditationAMDataControl" Package="com.sd.motoraccreditation.model.appmodule" FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"

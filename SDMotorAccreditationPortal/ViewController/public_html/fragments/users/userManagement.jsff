@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout id="pgl1" layout="vertical">
+        <af:panelGroupLayout layout="vertical" id="pgl2">
+            <af:panelHeader text="User Management" id="ph1">
+                <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.UserVOCriteriaQuery.queryDescriptor}" model="#{bindings.UserVOCriteriaQuery.queryModel}"
+                          queryListener="#{bindings.UserVOCriteriaQuery.processQuery}" queryOperationListener="#{bindings.UserVOCriteriaQuery.processQueryOperation}" resultComponentId="::pc1:resId1"/>
+            </af:panelHeader>
+            <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                    <af:toolbar id="t1">
+                        <af:button text="Create" id="b1" actionListener="#{viewScope.UserManagementBackingBean.onUserCreateAction}"></af:button>
+                        <af:button text="Edit" id="b7">
+                            <af:showPopupBehavior popupId="::p1"/>
+                        </af:button>
+                        <af:button text="Delete User" id="b4" disabled="#{!bindings.Delete1.enabled}" actionListener="#{bindings.Delete1.execute}"/>
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" partialSubmit="false" immediate="true" id="b5">
+                            <af:resetActionListener/>
+                        </af:button>
+                    </af:toolbar>
+                </f:facet>
+                <f:facet name="statusbar"/>
+                <af:table value="#{bindings.Users.collectionModel}" var="row" rows="#{bindings.Users.rangeSize}" emptyText="#{bindings.Users.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.Users.collectionModel.selectedRow}" selectionListener="#{bindings.Users.collectionModel.makeCurrent}" rowSelection="single"
+                          fetchSize="#{bindings.Users.rangeSize}" id="resId1" columnStretching="column:resId1c3" styleClass="AFStretchWidth">
+                    <!--<af:column headerText="#{bindings.Users.hints.EmployeeId.label}" id="resId1c1">
+            <af:outputText value="#{row.EmployeeId}" shortDesc="#{bindings.Users.hints.EmployeeId.tooltip}" id="ot1">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.Users.hints.EmployeeId.format}"/>
+            </af:outputText>
+          </af:column>-->
+                    <!--<af:column headerText="#{bindings.Users.hints.UserId.label}" id="resId1c2">
+            <af:outputText value="#{row.UserId}" shortDesc="#{bindings.Users.hints.UserId.tooltip}" id="ot2">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.Users.hints.UserId.format}"/>
+            </af:outputText>
+          </af:column>-->
+                    <af:column headerText="#{bindings.Users.hints.Username.label}" id="resId1c3">
+                        <af:outputText value="#{row.Username}" shortDesc="#{bindings.Users.hints.Username.tooltip}" id="ot3"/>
+                    </af:column>
+                </af:table>
+            </af:panelCollection>
+        </af:panelGroupLayout>
+        <af:popup childCreation="deferred" contentDelivery="lazyUncached" autoCancel="disabled" id="p1" binding="#{viewScope.UserManagementBackingBean.userFormPopup}">
+            <af:panelWindow id="pw1" title="User Information" contentWidth="150">
+                <af:panelGroupLayout id="pgl4" layout="vertical" styleClass="AFStretchWidth">
+                    <af:panelFormLayout id="pfl1" styleClass="AFStretchWidth">
+                        <af:inputText value="#{bindings.Username.inputValue}" label="#{bindings.Username.hints.label}" required="#{bindings.Username.hints.mandatory}" columns="25"
+                                      shortDesc="#{bindings.Username.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.Username.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                    <af:panelCollection id="pc2" styleClass="AFStercthWidth">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t3">
+                                <af:button text="Add Role" id="b2" actionListener="#{viewScope.UserManagementBackingBean.onUserRoleAddAction}"/>
+                                <af:button text="Delete Role" id="b3" actionListener="#{bindings.Delete.execute}" disabled="#{!bindings.Delete.enabled}"/>
+                            </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.UserGroups1.collectionModel}" var="row" rows="#{bindings.UserGroups1.rangeSize}"
+                                  emptyText="#{bindings.UserGroups1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.UserGroups1.collectionModel.selectedRow}" selectionListener="#{bindings.UserGroups1.collectionModel.makeCurrent}" rowSelection="single"
+                                  styleClass="AFStercthWidth" fetchSize="#{bindings.UserGroups1.rangeSize}" id="t2" columnStretching="column:c1" partialTriggers="::b2 ::b3">
+                            <af:column headerText="Group" id="c1">
+                                <af:selectOneChoice value="#{row.bindings.GroupId.inputValue}" label="#{row.bindings.GroupId.label}" required="#{bindings.UserGroups1.hints.GroupId.mandatory}"
+                                                    shortDesc="#{bindings.UserGroups1.hints.GroupId.tooltip}" id="soc1">
+                                    <f:selectItems value="#{row.bindings.GroupId.items}" id="si1"/>
+                                    <f:validator binding="#{row.bindings.GroupId.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                        </af:table>
+                    </af:panelCollection>
+                    <af:panelGroupLayout id="pgl3" layout="horizontal" halign="end" styleClass="AFStretchWidth">
+                        <af:button actionListener="#{viewScope.UserManagementBackingBean.onUserFormCancelAction}" text="Cancel" immediate="true" id="b8">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        <af:button actionListener="#{viewScope.UserManagementBackingBean.onUserFormCancelAction}"  text="Save" id="b6"/>
+                    </af:panelGroupLayout>
+                    <f:facet name="separator">
+                        <af:spacer width="10" height="10" id="s2"/>
+                    </f:facet>
+                </af:panelGroupLayout>
+            </af:panelWindow>
+        </af:popup>
+    </af:panelGroupLayout>
+</jsp:root>

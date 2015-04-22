@@ -11,7 +11,6 @@ public class MenuBuilderUtil {
         super();
     }
 
-    private static MenuItemBean userMgmtMenu = new MenuItemBean("Home", "/images/xxx.png", IndexDynamicRegion.HOME_TASKFLOW);
     private static MenuItemBean companiesListMenu = new MenuItemBean("Companies List", "/images/xxx.png", IndexDynamicRegion.COMPANIES_LIST_TASKFLOW);
     private static MenuItemBean companyMotorsListMenu = new MenuItemBean("Company’s motors list", "/images/xxx.png", IndexDynamicRegion.COMPANY_MOTORS_LIST_TASKFLOW);
     private static MenuItemBean CompanyRequestListMenu = new MenuItemBean("Company‘s Request List", "/images/xxx.png", IndexDynamicRegion.COMPANY_REQUEST_LIST_TASKFLOW);
@@ -20,6 +19,8 @@ public class MenuBuilderUtil {
     private static MenuItemBean ClientUserListMenu = new MenuItemBean("Client’s user list", "/images/xxx.png", IndexDynamicRegion.CLIENT_USER_LIST_TASKFLOW);
     private static MenuItemBean otherProductsMenu = new MenuItemBean("Other Products", "/images/xxx.png", IndexDynamicRegion.OTHER_PRODUCTS_TASKFLOW);
     private static MenuItemBean inspectionCheckingListMenu = new MenuItemBean("Inspection’s checking lists", "/images/xxx.png", IndexDynamicRegion.INSPECTION_CHECKING_LIST_TASKFLOW);
+    private static MenuItemBean userManagementMenu = new MenuItemBean("User Management", "/images/xxx.png", IndexDynamicRegion.USER_MGMT_TASKFLOW);
+
 
     public static List<MenuItemBean> getUserMenuList() {
         //Array consist of admin, client, salesRep, supervisor, employee
@@ -27,7 +28,7 @@ public class MenuBuilderUtil {
         List<MenuItemBean> userMenuList = new ArrayList<MenuItemBean>();
         //Only admin pages - User management pages
         if (userRoles[0]) {
-            userMenuList.add(userMgmtMenu);
+            userMenuList.add(userManagementMenu);
         }
         //Common pages for all roles except admin
         if (userRoles[1] || userRoles[2] || userRoles[3] || userRoles[4]) {

@@ -29,7 +29,7 @@
     ColumnType="VARCHAR2"
     TableName="USERS">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="10"/>
+      <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
   </Attribute>
   <Attribute

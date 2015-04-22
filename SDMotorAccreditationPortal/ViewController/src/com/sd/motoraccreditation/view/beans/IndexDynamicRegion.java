@@ -21,6 +21,8 @@ public class IndexDynamicRegion implements Serializable {
     public static final String CLIENT_USER_LIST_TASKFLOW = "/WEB-INF/flows/ClientUserListTF.xml#ClientUserListTF";
     public static final String OTHER_PRODUCTS_TASKFLOW = "/WEB-INF/flows/OtherProductsTF.xml#OtherProductsTF";
     public static final String INSPECTION_CHECKING_LIST_TASKFLOW = "/WEB-INF/flows/InspectionCheckingListTF.xml#InspectionCheckingListTF";
+    public static final String USER_MGMT_TASKFLOW = "/WEB-INF/flows/UserManagementTF.xml#UserManagementTF";
+    
     private String taskFlowId = HOME_TASKFLOW;
     private HashMap parameters = new HashMap();
 

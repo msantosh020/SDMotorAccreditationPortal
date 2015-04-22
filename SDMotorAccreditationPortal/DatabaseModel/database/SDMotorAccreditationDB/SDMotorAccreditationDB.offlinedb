@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <hash n="dataTypeSettings">
+      <value n="databaseType" v="Oracle Database"/>
+      <value n="databaseVersion" v="101"/>
+   </hash>
+   <value n="id" v="aba1e73f-d1f5-42ad-977d-7778bf33e161"/>
+   <value n="name" v="SDMotorAccreditationDB"/>
+</ProviderSettings>

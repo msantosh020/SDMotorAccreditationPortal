@@ -1,0 +1,349 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
+  <name>USER_GROUPS</name>
+  <columns>
+    <column>
+      <name>USER_ID</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>USER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_GROUPS</name>
+              <identifier class="java.math.BigDecimal">15932</identifier>
+              <schemaName>SDMOTORACCREDITATION</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>GROUP_ID</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GROUP_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_GROUPS</name>
+              <identifier class="java.math.BigDecimal">15932</identifier>
+              <schemaName>SDMOTORACCREDITATION</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>FK_GROUPS</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>GROUP_ID</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>USER_GROUPS</name>
+            <schemaName>SDMOTORACCREDITATION</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SDMOTORACCREDITATION</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <onDeleteAction>NO_ACTION</onDeleteAction>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FK_GROUPS</name>
+            <childObjectNames>
+              <childObjectName>GROUP_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_GROUPS</name>
+              <identifier class="java.math.BigDecimal">15932</identifier>
+              <schemaName>SDMOTORACCREDITATION</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>GROUPS_PK</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>GROUPS</name>
+          <schemaName>SDMOTORACCREDITATION</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SDMOTORACCREDITATION</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>FK_USERS</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>USER_ID</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>USER_GROUPS</name>
+            <schemaName>SDMOTORACCREDITATION</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SDMOTORACCREDITATION</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <onDeleteAction>NO_ACTION</onDeleteAction>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FK_USERS</name>
+            <childObjectNames>
+              <childObjectName>USER_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_GROUPS</name>
+              <identifier class="java.math.BigDecimal">15932</identifier>
+              <schemaName>SDMOTORACCREDITATION</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>USERS_PK</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>USERS</name>
+          <schemaName>SDMOTORACCREDITATION</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SDMOTORACCREDITATION</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <name>USER_GROUPS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>USER_ID</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>USER_GROUPS</name>
+            <schemaName>SDMOTORACCREDITATION</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SDMOTORACCREDITATION</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>GROUP_ID</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>USER_GROUPS</name>
+            <schemaName>SDMOTORACCREDITATION</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SDMOTORACCREDITATION</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.NameBasedID">
+        <name>USER_GROUPS_PK</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>USER_GROUPS</name>
+          <schemaName>SDMOTORACCREDITATION</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SDMOTORACCREDITATION</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>USER_GROUPS_PK</name>
+            <childObjectNames>
+              <childObjectName>USER_ID</childObjectName>
+              <childObjectName>GROUP_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_GROUPS</name>
+              <identifier class="java.math.BigDecimal">15932</identifier>
+              <schemaName>SDMOTORACCREDITATION</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <index>
+      <name>USER_GROUPS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>USER_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>USER_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>USER_GROUPS_PK</name>
+                  <identifier class="java.math.BigDecimal">15933</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>USER_GROUPS</name>
+                    <identifier class="java.math.BigDecimal">15932</identifier>
+                    <schemaName>SDMOTORACCREDITATION</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SDMOTORACCREDITATION</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>GROUP_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>GROUP_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>USER_GROUPS_PK</name>
+                  <identifier class="java.math.BigDecimal">15933</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>USER_GROUPS</name>
+                    <identifier class="java.math.BigDecimal">15932</identifier>
+                    <schemaName>SDMOTORACCREDITATION</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SDMOTORACCREDITATION</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>USER_GROUPS_PK</name>
+            <identifier class="java.math.BigDecimal">15933</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_GROUPS</name>
+              <identifier class="java.math.BigDecimal">15932</identifier>
+              <schemaName>SDMOTORACCREDITATION</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SDMOTORACCREDITATION</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>SYSTEM</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SDMOTORACCREDITATION</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </index>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">SDMotorAccreditation</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>USER_GROUPS</name>
+        <identifier class="java.math.BigDecimal">15932</identifier>
+        <schemaName>SDMOTORACCREDITATION</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>0</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>SYSTEM</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleTableProperties</key>
+      <value class="oracle.javatools.db.ora.OracleTableProperties">
+        <tableCompression>NOCOMPRESS</tableCompression>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SDMOTORACCREDITATION</name>
+  </schema>
+</table>

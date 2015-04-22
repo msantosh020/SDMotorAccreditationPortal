@@ -13,7 +13,9 @@
     Name="UserEO"
     Cardinality="1"
     Source="true"
-    Owner="com.sd.motoraccreditation.model.admin.usermanagement.entity.UserEO">
+    Owner="com.sd.motoraccreditation.model.admin.usermanagement.entity.UserEO"
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="UserEO"/>
@@ -29,7 +31,8 @@
   <AssociationEnd
     Name="UserGroupEO"
     Cardinality="-1"
-    Owner="com.sd.motoraccreditation.model.admin.usermanagement.entity.UserGroupEO">
+    Owner="com.sd.motoraccreditation.model.admin.usermanagement.entity.UserGroupEO"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="UserGroupEO"/>

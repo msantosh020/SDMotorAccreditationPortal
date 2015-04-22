@@ -65,9 +65,9 @@
                 <f:facet name="buttonBar"/>
                 <af:panelFormLayout id="pfl1" labelAlignment="top">
                     <f:facet name="footer">
-                        <af:button text="#{portal.SEND_REQUEST}" id="b1"/>
+                        <af:button text="#{portal.SEND_REQUEST}" id="b1" actionListener="#{LoginBackingBean.onSendRequestAction}"/>
                     </f:facet>
-                    <af:inputText label="#{portal.ENTER_EMAIL}" id="it1"/>
+                    <af:inputText label="#{portal.ENTER_EMAIL}" id="it1" value="#{LoginBackingBean.lostPasswordRequestEmailId}"/>
                 </af:panelFormLayout>
             </af:dialog>
         </af:popup>

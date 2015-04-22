@@ -465,6 +465,11 @@ public class ADFUtils {
         RichPopup.PopupHints popupHints = new RichPopup.PopupHints();
         popup.show(popupHints);
     }
+    
+    public static void hidePopup(RichPopup popup) {
+        popup.hide();
+    }
+    
     /*NOT TO USE SHOWPOPUP OR HIDEPOPUP USING POPUPID */
     //    public static void showPopup(String popupId,String alignId){
     //        FacesContext context = FacesContext.getCurrentInstance();

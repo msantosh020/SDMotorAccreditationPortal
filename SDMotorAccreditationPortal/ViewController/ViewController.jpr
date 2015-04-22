@@ -309,6 +309,22 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="Freemarker-2.3.19.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Javax.activation_1.1.0.0_1-1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Javax.mail_1.1.0.0_1-4-1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Log4j-1.2.17.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Oracle XML Parser v2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -337,6 +353,46 @@
             <value n="isJDK" v="false"/>
          </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../lib/freemarker-2.3.19.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Freemarker-2.3.19.jar"/>
+               <value n="id" v="Freemarker-2.3.19.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../lib/javax.activation_1.1.0.0_1-1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Javax.activation_1.1.0.0_1-1.jar"/>
+               <value n="id" v="Javax.activation_1.1.0.0_1-1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../lib/javax.mail_1.1.0.0_1-4-1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Javax.mail_1.1.0.0_1-4-1.jar"/>
+               <value n="id" v="Javax.mail_1.1.0.0_1-4-1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../lib/log4j-1.2.17.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Log4j-1.2.17.jar"/>
+               <value n="id" v="Log4j-1.2.17.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="JSP Runtime"/>
@@ -444,6 +500,22 @@
          </hash>
          <hash>
             <value n="id" v="Oracle Page Templates"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Freemarker-2.3.19.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Javax.activation_1.1.0.0_1-1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Javax.mail_1.1.0.0_1-4-1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Log4j-1.2.17.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
